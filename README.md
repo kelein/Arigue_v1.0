@@ -33,3 +33,7 @@ A simple DevOps Platform developing by Python Web Framework Django and Bootstrap
     └── js
 ```
 8 directories, 19 files
+
+
+# Kallen Ding, Agu 27 2015
+Update view.py and complete the function of database options.
