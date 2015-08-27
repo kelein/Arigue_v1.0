@@ -3,7 +3,6 @@ A simple DevOps Platform developing by Python Web Framework Django and Bootstrap
 
 # File Arch
 ```
-.
 ├── arigue
 │   ├── admin.py
 │   ├── admin.pyc
