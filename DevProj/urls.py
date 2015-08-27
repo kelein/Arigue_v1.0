@@ -24,5 +24,6 @@ urlpatterns = [
 	url(r'^arigue', arigue),
 	url(r'^login', login),
 	url(r'^dashboard', dashboard),
+	url(r'^server', server),
 	
 ]

@@ -3,8 +3,9 @@ from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.template import loader
 from django.contrib import auth
 
-
+from arigue.models import *
 # Create your views here.
+
 
 # index view 
 def index(request):
@@ -18,7 +19,6 @@ def arigue(request):
 
 # login view
 def login(request):
-	# print request.POST
 	# print request.POST.get('username')
 	# print request.POST.get('password')
 
@@ -41,3 +41,9 @@ def logout(request):
 # Dashboard view
 def dashboard(request):
 	return render_to_response('dashboard.html', {'user': request.user})
+
+# Server manager view
+def server(request):
+  	t = loader.get_template('server.html')
+	servers = Server.objects.all()
+	return render_to_response('server.html', {'servers': servers})
