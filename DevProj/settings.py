@@ -112,6 +112,5 @@ STATIC_URL = '/static/'
 # Additional static files of bootstrap.
 # Kallen Ding, Agu 21 2015
 STATICFILES_DIRS = (
-	
-	'/home/kallen/Python/Django/DevProj/static',
+	os.path.join(BASE_DIR, "static"),
 )
