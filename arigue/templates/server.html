@@ -116,7 +116,7 @@
                 </tr>
               </thead>
               <tbody>
-              {% for server in servers %}
+              {% for server in perPage.object_list %}
             	<tr>
                   <td>{{server.hostname}}</td>
                   <td>{{server.ipaddr}}</td>
@@ -128,11 +128,21 @@
               </tbody>
             </table>
 
-            <!-- Pagination Start -->
-            <button type="button" class="btn btn-sm btn-default pull-right"><a href="">Next</a></button>
-            <button type="button" class="btn btn-sm btn-default pull-right">Current</button>
-            <button type="button" class="btn btn-sm btn-default pull-right"><a href="">Prev</a></button>
-            <!-- Pagination End -->
+            <!-- Pagination ==================================================Start  -->
+             {% if perPage.has_next %}
+            		<button type="button" class="btn btn-sm btn-default pull-right"><a href="?page={{perPage.next_page_number}}">Next</a></button>
+            	{% else %}
+            		<span class='empty'></span>
+        	{% endif %}
+        	
+             <button type="button" class="btn btn-sm btn-default pull-right">{{ perPage.number }}</button>
+
+             {% if perPage.has_previous %}
+           		 <button type="button" class="btn btn-sm btn-default pull-right"><a href="?page={{ perPage.previous_page_number }}">Prev</a></button>
+           	{% else %}
+           		<span class='empty'></span>
+        	{% endif %}
+            <!-- Pagination ==================================================End -->
           </div>
         </div>
       </div>
