@@ -36,3 +36,6 @@ A simple DevOps Platform developing by Python Web Framework Django and Bootstrap
 
 # Kallen Ding, Agu 27 2015
 Update view.py and complete the function of database options.
+
+# Paginator Object
+
