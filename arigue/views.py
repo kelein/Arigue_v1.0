@@ -2,11 +2,53 @@ from django.shortcuts import render, get_object_or_404, render_to_response, redi
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect, JsonResponse, FileResponse
 from django.template import loader
 from django.contrib import auth
-
 from django.core.paginator import Paginator
-
 from arigue.models import *
-# Create your views here.
+from django import forms
+
+
+# homepage view
+def homepage(request):
+	return render_to_response('homepage.html', {})
+
+# Define form model
+class UserForm(forms.Form):
+	nickname = forms.CharField(label='nickname: ', max_length=10)
+	email = forms.EmailField(label='Email: ')
+	password = forms.CharField(label='Password: ', widget=forms.PasswordInput())
+	jobstate = forms.BooleanField(label='Jobstate: ')
+	school = forms.CharField(max_length=30)
+	job = forms.ChoiceField(label='Job: ', widget=forms.Select())
+	userimg = forms.FileField(label='User Image: ', widget=forms.FileInput)	
+
+
+# profile view
+# Kallen Ding, Agu 31 2015
+def profile(request):
+	if request.method == 'POST':
+		uf = UserForm(request.POST)
+		if uf.is_valid():
+			nickname = uf.cleaned_data['nickname']
+			email = uf.cleaned_data['email']
+			password = uf.cleaned_data['password']
+			jobstate = uf.cleaned_data['jobstate']
+			school = uf.cleaned_data['school']
+			job = uf.cleaned_data['job']
+			userimg = uf.cleaned_data['userimg']
+			# Save data into database
+			profile = Profile()
+			profile.nickname = nickname
+			profile.email = email
+			profile.password = password
+			profile.jobstate = jobstate
+			profile.school = school
+			profile.job = job
+			profile.userimg = userimg
+			profile.save()
+			return render_to_response('success.html', {'username': username})
+	else:
+		uf = UserForm()
+	return render_to_response('profile.html', {'uf': uf})
 
 
 # index view 

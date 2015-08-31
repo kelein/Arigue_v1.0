@@ -114,3 +114,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
 	os.path.join(BASE_DIR, "static"),
 )
+
+# Add upload file path
+# Kallen Ding, Agu 31 2015
+MEDIA_ROOT = '/upload/'
+MEDIA_URL = '/upload/'

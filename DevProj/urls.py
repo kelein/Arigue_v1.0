@@ -25,5 +25,6 @@ urlpatterns = [
 	url(r'^login', login),
 	url(r'^dashboard', dashboard),
 	url(r'^server', server),
-	
+	url(r'^profile', profile),
+	url(r'^homepage', homepage),
 ]

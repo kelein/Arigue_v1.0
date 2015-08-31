@@ -1,0 +1,185 @@
+{% extends 'index.html' %}
+
+{% block page-content %}
+
+<div class="container layout">
+
+
+<div class="row">
+<div class="col-md-9 layout-body">
+
+<div class="row content profile-container">
+
+
+<div class="col-md-6 col-md-offset-2 pro-body">
+
+<div class="change-img-text">
+
+<a id="pickfiles"><img class="user-img" src="/static/imgs/upload/userImg.png" data-toggle="tooltip" data-placement="top" title="" data-original-title="点击更换头像" data-trggier="hover"/></a>
+
+</div>
+<div class="shiyandou">
+<img src="https://dn-syl-static.qbox.me/img/shiyandou.png"/>
+</div>
+
+
+
+<form class="" method="POST" action="/profile" enctype="multipart/form-data">
+
+<div style="display:none;"><input id="csrf_token" name="csrf_token" type="hidden" value="">
+<input id="next" name="next" type="hidden" value=""></div>
+
+<label for="name">昵称</label>
+<input class="form-control" id="name" name="" type="text" value="Kallen">
+<span class="help-inline"></span>
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="control-group">
+<label for="email">邮箱</label>
+<input class="form-control" id="email" name="email" type="email" value="keleix@gmail.com">
+<span class="help-inline"></span>
+
+</div>
+
+
+
+
+
+
+
+<div class="control-group">
+<label for="new_password">新密码</label>
+<input class="form-control" id="new_password" name="new_password" type="password" value="">
+<span class="help-inline"></span>
+
+</div>
+
+
+
+
+
+
+
+<div class="control-group">
+<label for="password_again">再次输入</label>
+<input class="form-control" id="password_again" name="password_again" type="password" value="">
+<span class="help-inline"></span>
+
+</div>
+
+
+
+
+
+
+
+<div class="control-group">
+<label class="control-label" for="job_stat_code">我的状态</label>
+<div class="controls">
+<div class="radio">
+<label for="job_stat_code-0">
+<input id="job_stat_code-0" name="job_stat_code" type="radio" value="0"> 在上学
+</label>
+</div><div class="radio">
+<label for="job_stat_code-1">
+<input checked id="job_stat_code-1" name="job_stat_code" type="radio" value="1"> 在工作
+</label>
+</div>
+<span class="help-inline"></span>
+
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="control-group">
+<label for="school">我的学校</label>
+<input class="form-control" id="school" name="school" type="text" value="">
+<span class="help-inline"></span>
+
+</div>
+
+
+
+
+
+
+
+<div class="control-group">
+<label for="job">职位</label>
+<select class="form-control" id="job" name="job">
+<option selected value="1">Linux研发工程师</option>
+<option value="2">前端工程师</option>
+<option value="3">Android工程师</option>
+<option  value="4">运维工程师</option>
+<option value="5">测试工程师</option>
+<option value="6">DBA工程师</option>
+<option value="7">产品经理</option>
+<option value="8">硬件开发工程师</option>
+<option value="9">Python研发工程师</option>
+<option value="10">PHP研发工程师</option>
+<option value="11">JAVA研发工程师</option>
+<option value="12">Ruby研发工程师</option>
+<option value="13">iOS研发工程师</option>
+<option value="14">其他</option>
+</select>
+
+<span class="help-inline"></span>
+
+</div>
+
+
+
+
+<div class="submit">
+<input class="btn btn-primary" id="submit" name="submit" type="submit" value="保存">
+</div>
+
+
+
+
+</form>
+
+
+</div>
+</div>
+
+</div>
+<div class="col-md-3 layout-side">
+
+
+<div class="sidebox">
+
+
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+{% endblock %}
+
