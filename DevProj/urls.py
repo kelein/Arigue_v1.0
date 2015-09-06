@@ -27,4 +27,11 @@ urlpatterns = [
 	url(r'^server', server),
 	url(r'^profile', profile),
 	url(r'^homepage', homepage),
+
+	url(r'^test', base),
+	
+	url(r'^monitor', monitor),
+	url(r'^asset', asset),
+	
+	url(r'^logout', logout),
 ]

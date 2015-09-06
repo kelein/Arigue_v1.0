@@ -20,4 +20,4 @@ class Profile(models.Model):
 	jobstate = models.BooleanField()
 	school = models.CharField(max_length=30)
 	job = models.CharField(max_length=30) 
-	userimg = models.FileField()
+	userimg = models.FileField(upload_to='./upload', max_length=30)

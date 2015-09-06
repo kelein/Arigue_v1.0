@@ -6,6 +6,25 @@ from django.core.paginator import Paginator
 from arigue.models import *
 from django import forms
 
+import os
+
+
+# view for test
+def base(request):
+	return render_to_response('base.html', {})
+
+
+# monitor view
+def monitor(request):
+	cmdstr = 'free'
+	# output = os.system(cmdstr)
+	output = os.popen(cmdstr)
+	arch = output.read()
+	return render_to_response('monitor.html', {'arch': arch})
+
+# assets view
+def asset(request):
+	return render_to_response('asset.html', {})
 
 # homepage view
 def homepage(request):
@@ -79,8 +98,7 @@ def login(request):
 
 # logout view
 def logout(request):
-	logout(request)
-
+	return render_to_response('login.html', {})
 
 # Dashboard view
 def dashboard(request):
