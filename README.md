@@ -1,7 +1,7 @@
 # Arigue
-A simple DevOps Platform developing by Python Web Framework Django and Bootstrap.
+> A simple DevOps Platform developing by Python Web Framework Django and Bootstrap.
 
-# File Arch
+## File Arch
 ```
 ├── arigue
 │   ├── admin.py
@@ -30,12 +30,12 @@ A simple DevOps Platform developing by Python Web Framework Django and Bootstrap
     ├── fonts
     ├── imgs
     └── js
-```
 8 directories, 19 files
-
-
-# Kallen Ding, Agu 27 2015
-Update view.py and complete the function of database options.
-
-# Paginator Object
-
+```
+## Effect Preview
+#### Login View
+![image](https://raw.githubusercontent.com/Keleir/IMGDB/master/Arigue/Login.png "Login View")
+#### Index View
+![image](https://raw.githubusercontent.com/Keleir/IMGDB/master/Arigue/Index.png "Index View")
+#### Serer View
+![image](https://raw.githubusercontent.com/Keleir/IMGDB/master/Arigue/Server.png "Server View")
