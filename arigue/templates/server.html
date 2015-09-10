@@ -2,7 +2,7 @@
 
 {% block page-content %}
 
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div class="col-sm-9  col-md-10 col-md-offset-1 main">
           <h1 class="page-header">Server Manager</h1>
 
           <div class="row placeholders">
@@ -42,7 +42,11 @@
               </thead>
               <tbody>
               {% for server in perPage.object_list %}
-            	<tr>
+              {% if forloop.counter0|divisibleby:2 %}
+            	<tr class="success">
+            	{% else %}
+            	<tr class="warning">
+            	{% endif %}
                   <td>{{server.hostname}}</td>
                   <td>{{server.ipaddr}}</td>
                   <td>{{server.sysinfo}}</td>
